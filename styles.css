@@ -16,6 +16,7 @@ h1 {
     color: #FF69B4;
     font-family: 'Georgia', serif;
     text-shadow: 2px 2px 4px rgba(255,105,180,0.2);
+    padding: 25px;
 }
 
 .readings-container {
@@ -25,11 +26,13 @@ h1 {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .reading-card {
     background: white;
     padding: 25px;
+    padding-bottom: 25px;
     border-radius: 15px;
     width: 320px;
     text-align: center;
@@ -119,4 +122,316 @@ h1 {
     font-size: 0.8em;
     margin-top: 10px;
     font-style: italic;
+}
+
+/* Estilos del Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 0 1.5rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #DB7093;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-list a:hover {
+    color: #FF1493;
+}
+
+/* Sección Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255, 105, 180, 0.3), rgba(255, 182, 193, 0.3)),
+                url();
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 60px; /* Para compensar el header fixed */
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-style: italic;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-list li {
+        margin: 0 1rem;
+    }
+}
+
+/* Estilos About */
+.about-content {
+    padding: 4rem 2rem;
+    background: #fff;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.05);
+}
+
+.section-title {
+    text-align: center;
+    color: #DB7093;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-text {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-image {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    border: 3px solid #FFB6C1;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #FFB6C1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -13px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: #FF69B4;
+    border-radius: 50%;
+    border: 3px solid #FFD1DC;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+/* Estilos Contacto */
+.contact-section {
+    padding-left: 25px;
+    background: #FFF0F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: auto auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.1);
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: #FF69B4;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-direction: row;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    color: #DB7093;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #FF1493;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        max-width: 90%;
+    }
+    .contact-details {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+.video-container {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+video {
+    max-width: 600px; /* Ajusta según tus necesidades */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Centrar el video */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    width: 80%;  /* Limita el ancho al 80% de la pantalla */
+    max-width: 800px; /* Máximo tamaño para evitar estiramiento */
+    aspect-ratio: 16 / 9; /* Mantiene la proporción del video */
+    border-radius: 10px; /* Esquinas redondeadas opcionales */
+    border: none;
+}
+
+/* Centrar los botones */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.download-button, .back-to-store {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #DB7093;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.download-button:hover, .back-to-store:hover {
+    background-color: #FF1493;
 }
