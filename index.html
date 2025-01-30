@@ -3,155 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Videos</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #eee;
-        }
-
-        .product-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        .product-description {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-        }
-
-        .product-price {
-            font-size: 1.4em;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .buy-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #009ee3;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .buy-button:hover {
-            background-color: #007ab3;
-        }
-    </style>
+    <title>Tarot Místico</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tienda de Videos Digitales</h1>
+    <h1>Tienda de Lecturas de Tarot</h1>
     
-    <div class="products-container">
-        <!-- Producto 1 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Video 1" class="product-image">
-            <h2 class="product-title">Video Tutorial HTML</h2>
-            <p class="product-description">Aprende HTML desde cero con este completo tutorial de 5 horas.</p>
-            <div class="product-price">$15.99</div>
-            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar Ahora</a>
+    <div class="readings-container">
+        <!-- Lectura 1 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Amor" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Lectura de Amor</h2>
+            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
+            <div class="reading-price">$29.99</div>
+            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar Lectura</a>
         </div>
 
-        <!-- Producto 2 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Video 2" class="product-image">
-            <h2 class="product-title">Curso de CSS Avanzado</h2>
-            <p class="product-description">Domina Flexbox, Grid y diseños responsivos.</p>
-            <div class="product-price">$19.99</div>
-            <a href="LINK_DE_COBRO_MERCADO_PAGO_2" class="buy-button">Comprar Ahora</a>
+        <!-- Lectura 2 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
+            <h2 class="reading-title">Lectura de Carrera</h2>
+            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
+            <div class="reading-price">$34.99</div>
+            <a href="#" class="buy-button">Comprar Lectura</a>
         </div>
 
-        <!-- Producto 3 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Video 3" class="product-image">
-            <h2 class="product-title">JavaScript Moderno</h2>
-            <p class="product-description">ES6+, Node.js y desarrollo web moderno.</p>
-            <div class="product-price">$24.99</div>
-            <a href="LINK_DE_COBRO_MERCADO_PAGO_3" class="buy-button">Comprar Ahora</a>
+        <!-- Lectura 3 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
+            <h2 class="reading-title">Lectura Kármica</h2>
+            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
+            <div class="reading-price">$39.99</div>
+            <a href="#" class="buy-button">Comprar Lectura</a>
         </div>
-
-        <!-- Añadir más productos según sea necesario -->
     </div>
 
-    <!-- Agrega esto en tu index.html, preferiblemente al final antes de cerrar el body -->
-<div style="text-align: center; margin: 40px 0;">
-    <h3>Acceso de Prueba (Solo Testing)</h3>
-    <a href="curso1.html" class="test-button">Acceder al Curso 1 GRATIS</a>
-    <p style="color: #666; font-size: 0.8em; margin-top: 10px;">Este botón es solo para propósitos de prueba - Eliminar en producción</p>
-</div>
+    <!-- Botón de prueba -->
+    <div class="test-section">
+        <h3>Acceso de Prueba (Solo Testing)</h3>
+        <a href="curso1.html?testing=true" class="test-button">Acceder a Lectura de Amor GRATIS</a>
+        <p class="test-warning">Este botón es solo para propósitos de prueba - Eliminar en producción</p>
+    </div>
 
-<!-- Agrega este estilo en tu CSS -->
-<style>
-    .test-button {
-        display: inline-block;
-        padding: 12px 25px;
-        background-color: #2ecc71;
-        color: white !important;
-        text-decoration: none;
-        border-radius: 25px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border: 2px solid #27ae60;
-        box-shadow: 0 3px 10px rgba(46, 204, 113, 0.3);
-        margin: 15px 0;
-    }
-
-    .test-button:hover {
-        background-color: #27ae60;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
-    }
-</style>
+    <script>
+        // Validación básica para acceso no autorizado
+        if(window.location.href.includes('curso1.html') && !document.location.search.includes('testing=true') && window.location.hostname !== 'localhost') {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
-
