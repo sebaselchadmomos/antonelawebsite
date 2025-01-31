@@ -19,6 +19,7 @@
 
     <script>
     // Definir los cursos con sus nombres y enlaces
+// Definir los cursos con sus nombres y enlaces
 const cursosDisponibles = {
     "curso1": { nombre: "Clase 1: Arcanos Mayores", url: "curso1.html" },
     "curso2": { nombre: "Clase 2: Arcanos Menores", url: "curso2.html" },
@@ -26,28 +27,23 @@ const cursosDisponibles = {
 };
 
 function cargarCursosComprados() {
-    const params = new URLSearchParams(window.location.search);
-    const cursosComprados = params.get("c");
+    // Obtener los cursos comprados del localStorage
+    const cursosComprados = JSON.parse(localStorage.getItem('cursosComprados')) || [];
 
-    console.log("URL Params:", cursosComprados); // 🔍 Verificar qué se recibe
-    console.log("Cursos disponibles:", cursosDisponibles); // 🔍 Verificar el objeto de cursos
+    console.log("Cursos comprados:", cursosComprados); // 🔍 Verificar en consola
 
     const container = document.getElementById("courses-container");
     const errorMessage = document.getElementById("error-message");
 
-    if (!cursosComprados) {
-        console.warn("No se detectaron cursos en la URL.");
+    if (cursosComprados.length === 0) {
+        console.warn("No se detectaron cursos comprados.");
         errorMessage.style.display = "block"; // Mostrar mensaje de error
         return;
     }
 
-    // Limpiar y dividir los cursos comprados
-    const cursosArray = cursosComprados.split(",").map(curso => curso.trim());
-    console.log("Cursos comprados (split):", cursosArray); // 🔍 Verificar cómo se dividen los cursos
-
     let cursosEncontrados = false;
 
-    cursosArray.forEach(curso => {
+    cursosComprados.forEach(curso => {
         if (cursosDisponibles[curso]) {
             cursosEncontrados = true;
             const cursoData = cursosDisponibles[curso];
