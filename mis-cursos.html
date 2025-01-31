@@ -18,56 +18,62 @@
     </section>
 
     <script>
-        // Definir los cursos con sus nombres y enlaces
-        const cursosDisponibles = {
-            "clase1": { nombre: "Clase 1: Arcanos Mayores", url: "curso1.html" },
-            "clase2": { nombre: "Clase 2: Arcanos Menores", url: "curso2.html" },
-            "clase3": { nombre: "Clase 3: Tiradas", url: "curso3.html" }
-        };
+    // Definir los cursos con sus nombres y enlaces
+const cursosDisponibles = {
+    "curso1": { nombre: "Clase 1: Arcanos Mayores", url: "curso1.html" },
+    "curso2": { nombre: "Clase 2: Arcanos Menores", url: "curso2.html" },
+    "curso3": { nombre: "Clase 3: Tiradas", url: "curso3.html" }
+};
 
-        function cargarCursosComprados() {
-            const params = new URLSearchParams(window.location.search);
-            const cursosComprados = params.get("c");
+function cargarCursosComprados() {
+    const params = new URLSearchParams(window.location.search);
+    const cursosComprados = params.get("c");
 
-            console.log("URL Params:", cursosComprados); // 🔍 Verificar qué se recibe
+    console.log("URL Params:", cursosComprados); // 🔍 Verificar qué se recibe
+    console.log("Cursos disponibles:", cursosDisponibles); // 🔍 Verificar el objeto de cursos
 
-            const container = document.getElementById("courses-container");
-            const errorMessage = document.getElementById("error-message");
+    const container = document.getElementById("courses-container");
+    const errorMessage = document.getElementById("error-message");
 
-            if (!cursosComprados) {
-                console.warn("No se detectaron cursos en la URL.");
-                errorMessage.style.display = "block"; // Mostrar mensaje de error
-                return;
-            }
+    if (!cursosComprados) {
+        console.warn("No se detectaron cursos en la URL.");
+        errorMessage.style.display = "block"; // Mostrar mensaje de error
+        return;
+    }
 
-            const cursosArray = cursosComprados.split(",");
-            let cursosEncontrados = false;
+    // Limpiar y dividir los cursos comprados
+    const cursosArray = cursosComprados.split(",").map(curso => curso.trim());
+    console.log("Cursos comprados (split):", cursosArray); // 🔍 Verificar cómo se dividen los cursos
 
-            cursosArray.forEach(curso => {
-                if (cursosDisponibles[curso]) {
-                    cursosEncontrados = true;
-                    const cursoData = cursosDisponibles[curso];
+    let cursosEncontrados = false;
 
-                    const cursoElement = document.createElement("div");
-                    cursoElement.classList.add("curso-box");
+    cursosArray.forEach(curso => {
+        if (cursosDisponibles[curso]) {
+            cursosEncontrados = true;
+            const cursoData = cursosDisponibles[curso];
 
-                    cursoElement.innerHTML = `
-                        <h2>${cursoData.nombre}</h2>
-                        <a href="${cursoData.url}" class="btn">Acceder</a>
-                    `;
+            const cursoElement = document.createElement("div");
+            cursoElement.classList.add("curso-box");
 
-                    container.appendChild(cursoElement);
-                }
-            });
+            cursoElement.innerHTML = `
+                <h2>${cursoData.nombre}</h2>
+                <a href="${cursoData.url}" class="btn">Acceder</a>
+            `;
 
-            if (!cursosEncontrados) {
-                console.warn("No se encontraron cursos válidos en la lista.");
-                errorMessage.style.display = "block";
-            }
+            container.appendChild(cursoElement);
+        } else {
+            console.warn(`Curso no encontrado: ${curso}`);
         }
+    });
 
-        // Ejecutar la función al cargar la página
-        document.addEventListener("DOMContentLoaded", cargarCursosComprados);
+    if (!cursosEncontrados) {
+        console.warn("No se encontraron cursos válidos en la lista.");
+        errorMessage.style.display = "block";
+    }
+}
+
+// Ejecutar la función al cargar la página
+document.addEventListener("DOMContentLoaded", cargarCursosComprados);
     </script>
 
     <style>
