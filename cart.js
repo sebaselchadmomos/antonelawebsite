@@ -31,11 +31,20 @@ function addToCart(productId) {
 
     saveCart();
     updateCartUI();
+
+    // Mostrar notificación
+    const notification = document.getElementById('notification');
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000); // Ocultar después de 3 segundos
 }
 
 function updateCartUI() {
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
+    const cartCounter = document.getElementById('cartCounter');
+    const cartCountIcon = document.querySelector('.cart-count'); // Selecciona el ícono del carrito
 
     // Actualizar items
     cartItems.innerHTML = cart.map(item => `
@@ -56,6 +65,11 @@ function updateCartUI() {
     // Actualizar total
     const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
     cartTotal.textContent = `$${total.toLocaleString('es-AR')}`;
+
+    // Actualizar contador del carrito y el ícono
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartCounter.textContent = totalItems;
+    cartCountIcon.textContent = totalItems; // Actualiza el ícono del carrito
 }
 
 function removeFromCart(productId) {
@@ -82,6 +96,11 @@ async function procesarPagoMercadoPago() {
     const cursosComprados = cart
         .filter(item => cursoURLs[item.name])
         .map(item => cursoURLs[item.name]);
+
+    // Guardar los cursos comprados en localStorage
+    const cursosGuardados = JSON.parse(localStorage.getItem('cursosComprados')) || [];
+    const nuevosCursos = cursosComprados.filter(curso => !cursosGuardados.includes(curso));
+    localStorage.setItem('cursosComprados', JSON.stringify([...cursosGuardados, ...nuevosCursos]));
 
     let successURL;
 
@@ -131,9 +150,14 @@ async function procesarPagoMercadoPago() {
     }
 }
 
+function limpiarCarrito() {
+    cart = [];
+    saveCart();
+    updateCartUI();
+}
+
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
-
