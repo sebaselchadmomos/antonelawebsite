@@ -6,8 +6,8 @@ const PRODUCTOS = {
     1: { name: 'Mazo Rider-Waite', price: 18999 },
     2: { name: 'Kit Velas Rituales', price: 9850 },
     3: { name: 'Clase 1: Arcanos Mayores', price: 1 },
-    4: { name: 'Clase 2: Arcanos Menores', price: 3499 },
-    5: { name: 'Clase 3: Tiradas', price: 3999 }
+    4: { name: 'Clase 2: Arcanos Menores', price: 1 },
+    5: { name: 'Clase 3: Tiradas', price: 1 }
 };
 
 
