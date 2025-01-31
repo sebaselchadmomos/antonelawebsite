@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Místicos - Antonela</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#cursos">Cursos</a></li>
+                <li><a href="about.html">Sobre Mí</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="products-main">
+        <h1 class="section-title">Productos Místicos</h1>
+        
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="tarot-rider.jpg" alt="Mazo Rider-Waite" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3>Mazo Rider-Waite</h3>
+                    <p class="product-description">Mazo clásico de tarot en edición premium con guía interpretativa</p>
+                    <div class="product-footer">
+                        <span class="product-price">$18.999</span>
+                        <button class="add-to-cart" onclick="addToCart(1)">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="product-card">
+                <div class="product-image-container">
+                    <img src="img/velas-rituales.jpg" alt="Velas Rituales" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3>Kit Velas Rituales</h3>
+                    <p class="product-description">Set de 7 velas colores surtidos con hierbas sagradas</p>
+                    <div class="product-footer">
+                        <span class="product-price">$9.850</span>
+                        <button class="add-to-cart" onclick="addToCart(2)">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Más productos... -->
+        </div>
+    </section>
+
+    <!-- Carrito Lateral -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Mi Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems"></div>
+            
+            <form id="shippingForm" class="shipping-form">
+                <h4><i class="fas fa-truck"></i> Datos de Envío</h4>
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="dni" name="dni" placeholder="DNI" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="direccion" name="direccion" placeholder="Dirección completa" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="provincia" name="provincia" placeholder="Provincia" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="cp" name="cp" placeholder="Código Postal" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <textarea 
+                        id="observaciones" 
+                        name="observaciones" 
+                        placeholder="Observaciones adicionales"
+                        rows="2"
+                    ></textarea>
+                </div>
+                
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                
+                
+<!-- Botón de pago actualizado -->
+<button type="button" onclick="procesarPagoMercadoPago()" class="whatsapp-btn" id="checkout-btn">
+    <i class="fab fa-whatsapp"></i> Pagar con Mercado Pago
+</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
