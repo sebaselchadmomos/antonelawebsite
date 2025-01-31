@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cursos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>📚 Mis Cursos</h1>
+        <p>A continuación, puedes acceder a los cursos que compraste.</p>
+    </header>
+
+    <section id="courses-container">
+        <!-- Aquí se mostrarán los cursos dinámicamente -->
+    </section>
+
+    <script>
+        // Definir los cursos con sus nombres y enlaces
+        const cursosDisponibles = {
+            "clase1": { nombre: "Clase 1: Arcanos Mayores", url: "clase1.html" },
+            "clase2": { nombre: "Clase 2: Arcanos Menores", url: "clase2.html" },
+            "clase3": { nombre: "Clase 3: Tiradas", url: "clase3.html" }
+        };
+
+        function cargarCursosComprados() {
+            const params = new URLSearchParams(window.location.search);
+            const cursosComprados = params.get("c") ? params.get("c").split(",") : [];
+
+            const container = document.getElementById("courses-container");
+
+            if (cursosComprados.length === 0) {
+                container.innerHTML = "<p>No tienes cursos comprados.</p>";
+                return;
+            }
+
+            cursosComprados.forEach(curso => {
+                if (cursosDisponibles[curso]) {
+                    const cursoData = cursosDisponibles[curso];
+
+                    const cursoElement = document.createElement("div");
+                    cursoElement.classList.add("curso-box");
+
+                    cursoElement.innerHTML = `
+                        <h2>${cursoData.nombre}</h2>
+                        <a href="${cursoData.url}" class="btn">Acceder</a>
+                    `;
+
+                    container.appendChild(cursoElement);
+                }
+            });
+        }
+
+        // Ejecutar la función al cargar la página
+        document.addEventListener("DOMContentLoaded", cargarCursosComprados);
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .curso-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            display: inline-block;
+            width: 250px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+
+</body>
+</html>
