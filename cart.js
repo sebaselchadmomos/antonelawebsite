@@ -5,7 +5,7 @@ const MERCADOPAGO_PUBLIC_KEY = "APP_USR-d77859d2-ff5b-4775-923a-ba65d299c0f2"; /
 const PRODUCTOS = {
     1: { name: 'Mazo Rider-Waite', price: 18999 },
     2: { name: 'Kit Velas Rituales', price: 9850 },
-    3: { name: 'Clase 1: Arcanos Mayores', price: 2999 },
+    3: { name: 'Clase 1: Arcanos Mayores', price: 1 },
     4: { name: 'Clase 2: Arcanos Menores', price: 3499 },
     5: { name: 'Clase 3: Tiradas', price: 3999 }
 };
