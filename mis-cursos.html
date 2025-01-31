@@ -14,7 +14,7 @@
     </header>
 
     <section id="courses-container">
-        <!-- Aquí se mostrarán los cursos dinámicamente -->
+        <p id="error-message" style="display: none; color: red;">No tienes cursos comprados.</p>
     </section>
 
     <script>
@@ -27,17 +27,25 @@
 
         function cargarCursosComprados() {
             const params = new URLSearchParams(window.location.search);
-            const cursosComprados = params.get("c") ? params.get("c").split(",") : [];
+            const cursosComprados = params.get("c");
+
+            console.log("URL Params:", cursosComprados); // 🔍 Verificar qué se recibe
 
             const container = document.getElementById("courses-container");
+            const errorMessage = document.getElementById("error-message");
 
-            if (cursosComprados.length === 0) {
-                container.innerHTML = "<p>No tienes cursos comprados.</p>";
+            if (!cursosComprados) {
+                console.warn("No se detectaron cursos en la URL.");
+                errorMessage.style.display = "block"; // Mostrar mensaje de error
                 return;
             }
 
-            cursosComprados.forEach(curso => {
+            const cursosArray = cursosComprados.split(",");
+            let cursosEncontrados = false;
+
+            cursosArray.forEach(curso => {
                 if (cursosDisponibles[curso]) {
+                    cursosEncontrados = true;
                     const cursoData = cursosDisponibles[curso];
 
                     const cursoElement = document.createElement("div");
@@ -51,6 +59,11 @@
                     container.appendChild(cursoElement);
                 }
             });
+
+            if (!cursosEncontrados) {
+                console.warn("No se encontraron cursos válidos en la lista.");
+                errorMessage.style.display = "block";
+            }
         }
 
         // Ejecutar la función al cargar la página
