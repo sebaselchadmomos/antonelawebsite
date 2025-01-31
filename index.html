@@ -1,40 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarot Místico</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarot Místico - Antonela</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+    </head>
 <body>
-    <h1>Tienda de Lecturas de Tarot</h1>
+
+    <header class="main-header">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="about.html">Sobre Mí</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                
+
+            </ul>
+        </nav>
+
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Antonela</h1>
+            <p class="hero-subtitle">Maestra de Tarot</p>
+        </div>
+    </section>
+
     
-    <div class="readings-container">
+
+    <h1>Cursos de Tarot</h1>
+
+    <div class="test-section">
+        <h3 class="">TODAS las clases</h3>
+        <a href="curso1.html?testing=true" class="test-button">Comprar</a>
+    </div>
+    
+    <div class="readings-container" id="cursos">
         <!-- Lectura 1 -->
         <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Amor" alt="Tarot Amor" class="reading-image">
-            <h2 class="reading-title">Lectura de Amor</h2>
+            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
             <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
             <div class="reading-price">$29.99</div>
-            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar Lectura</a>
+            <button class="buy-button" onclick="addToCart(3)">Agregar al carrito</button>
         </div>
 
         <!-- Lectura 2 -->
         <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
-            <h2 class="reading-title">Lectura de Carrera</h2>
+            <img src="arcanos mayores.jpg" alt="Tarot Carrera" class="reading-image">
+            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
             <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
             <div class="reading-price">$34.99</div>
-            <a href="#" class="buy-button">Comprar Lectura</a>
+            <a href="#" class="buy-button">Comprar clase</a>
         </div>
 
         <!-- Lectura 3 -->
         <div class="reading-card">
             <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
-            <h2 class="reading-title">Lectura Kármica</h2>
+            <h2 class="reading-title">Clase 3: Tiradas</h2>
             <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
             <div class="reading-price">$39.99</div>
-            <a href="#" class="buy-button">Comprar Lectura</a>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+    </div>
+
+    <div class="readings-container">
+        <!-- Lectura 1 -->
+        <div class="reading-card">
+            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
+            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
+            <div class="reading-price">$29.99</div>
+            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar clase</a>
+        </div>
+
+        <!-- Lectura 2 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
+            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
+            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
+            <div class="reading-price">$34.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+
+        <!-- Lectura 3 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
+            <h2 class="reading-title">Clase 3: Tiradas</h2>
+            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
+            <div class="reading-price">$39.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+    </div>
+
+    <div class="readings-container">
+        <!-- Lectura 1 -->
+        <div class="reading-card">
+            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
+            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
+            <div class="reading-price">$29.99</div>
+            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar clase</a>
+        </div>
+
+        <!-- Lectura 2 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
+            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
+            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
+            <div class="reading-price">$34.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+
+        <!-- Lectura 3 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
+            <h2 class="reading-title">Clase 3: Tiradas</h2>
+            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
+            <div class="reading-price">$39.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+    </div>
+
+    <div class="readings-container">
+        <!-- Lectura 1 -->
+        <div class="reading-card">
+            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
+            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
+            <div class="reading-price">$29.99</div>
+            <button class="buy-button" onclick="addToCart(3)">Agregar al carrito</button>
+        </div>
+
+        <!-- Lectura 2 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
+            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
+            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
+            <div class="reading-price">$34.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
+        </div>
+
+        <!-- Lectura 3 -->
+        <div class="reading-card">
+            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
+            <h2 class="reading-title">Clase 3: Tiradas</h2>
+            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
+            <div class="reading-price">$39.99</div>
+            <a href="#" class="buy-button">Comprar clase</a>
         </div>
     </div>
 
@@ -45,11 +170,115 @@
         <p class="test-warning">Este botón es solo para propósitos de prueba - Eliminar en producción</p>
     </div>
 
+    
+
+    <!-- Sección Contacto -->
+<section class="contact-section" id="contacto">
+    <div class="contact-container">
+        <h2 class="section-title">Contacto</h2>
+        
+        <div class="contact-grid">
+            
+
+            <!-- Info de Contacto -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email</h3>
+                    <p>consultas@antonelatarot.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Teléfono</h3>
+                    <p>+54 9 11 2345-6789</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Carrito Lateral -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Mi Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems"></div>
+            
+            <form id="shippingForm" class="shipping-form">
+                <h4><i class="fas fa-truck"></i> Datos de Envío</h4>
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="dni" name="dni" placeholder="DNI" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="direccion" name="direccion" placeholder="Dirección completa" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="provincia" name="provincia" placeholder="Provincia" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="cp" name="cp" placeholder="Código Postal" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <textarea 
+                        id="observaciones" 
+                        name="observaciones" 
+                        placeholder="Observaciones adicionales"
+                        rows="2"
+                    ></textarea>
+                </div>
+                
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                
+                <button type="button" onclick="procesarPagoMercadoPago()" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Finalizar Compra
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Validación básica para acceso no autorizado
         if(window.location.href.includes('curso1.html') && !document.location.search.includes('testing=true') && window.location.hostname !== 'localhost') {
             window.location.href = 'index.html';
         }
     </script>
+    
+    <script>
+        // Smooth scroll para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+<script src="cart.js"></script>
+
+
 </body>
 </html>
