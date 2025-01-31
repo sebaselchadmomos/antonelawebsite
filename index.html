@@ -10,8 +10,12 @@
         <script src="https://sdk.mercadopago.com/js/v2"></script>
     </head>
 <body>
+    <div id="notification" class="notification">
+        ¡Producto añadido al carrito!
+    </div>
 
     <header class="main-header">
+        <div id="cartCounter" class="cart-counter">0</div>
         <nav>
             <ul class="nav-list">
                 <li><a href="#inicio">Inicio</a></li>
@@ -28,7 +32,7 @@
 
         <div class="cart-icon" onclick="toggleCart()">
             <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span>
+            <span class="cart-count">0</span> <!-- Asegúrate de que tenga la clase "cart-count" -->
         </div>
     </header>
 
