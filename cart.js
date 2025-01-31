@@ -71,6 +71,31 @@ async function procesarPagoMercadoPago() {
         return;
     }
 
+    // Lista de cursos con sus URLs específicas
+    const cursoURLs = {
+        "Clase 1: Arcanos Mayores": "curso1",
+        "Clase 2: Arcanos Menores": "curso2",
+        "Clase 3: Tiradas": "curso3"
+    };
+
+    // Filtrar los cursos en el carrito
+    const cursosComprados = cart
+        .filter(item => cursoURLs[item.name])
+        .map(item => cursoURLs[item.name]);
+
+    let successURL;
+
+    if (cursosComprados.length === 1) {
+        // Si solo hay un curso, redirigir a su página específica
+        successURL = `https://antonelawebsite.netlify.app/${cursosComprados[0]}`;
+    } else if (cursosComprados.length > 1) {
+        // Si hay más de un curso, generar una URL personalizada
+        successURL = `https://antonelawebsite.netlify.app/mis-cursos?c=${cursosComprados.join(",")}`;
+    } else {
+        // Si no hay cursos en la compra, redirigir a la página general de éxito
+        successURL = "https://tusitio.com/success";
+    }
+
     try {
         const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
             method: "POST",
@@ -86,7 +111,7 @@ async function procesarPagoMercadoPago() {
                     unit_price: item.price
                 })),
                 back_urls: {
-                    success: "https://tusitio.com/success",
+                    success: successURL,
                     failure: "https://tusitio.com/failure",
                     pending: "https://tusitio.com/pending"
                 },
@@ -106,7 +131,9 @@ async function procesarPagoMercadoPago() {
     }
 }
 
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
+
