@@ -78,7 +78,42 @@ function removeFromCart(productId) {
     updateCartUI();
 }
 
-// Enviar a Mercado Pago
+// Función para enviar mensaje de WhatsApp
+function enviarMensajeWhatsApp() {
+    // Obtener los datos del formulario
+    const nombre = document.getElementById('nombre').value;
+    const dni = document.getElementById('dni').value;
+    const direccion = document.getElementById('direccion').value;
+    const localidad = document.getElementById('localidad').value;
+    const provincia = document.getElementById('provincia').value;
+    const cp = document.getElementById('cp').value;
+    const telefono = document.getElementById('telefono').value;
+    const observaciones = document.getElementById('observaciones').value;
+
+    // Crear el mensaje con los datos del formulario
+    const mensaje = `¡Nueva compra realizada!%0A%0A` +
+                    `*Nombre:* ${nombre}%0A` +
+                    `*DNI:* ${dni}%0A` +
+                    `*Dirección:* ${direccion}%0A` +
+                    `*Localidad:* ${localidad}%0A` +
+                    `*Provincia:* ${provincia}%0A` +
+                    `*Código Postal:* ${cp}%0A` +
+                    `*Teléfono:* ${telefono}%0A` +
+                    `*Observaciones:* ${observaciones}%0A%0A` +
+                    `*Productos comprados:*%0A` +
+                    cart.map(item => `- ${item.name} (Cantidad: ${item.quantity})`).join('%0A');
+
+    // Número de WhatsApp (reemplaza con el número deseado)
+    const numeroWhatsApp = "+5491121909856"; // Ejemplo: +5491123456789
+
+    // Crear el enlace de WhatsApp
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(urlWhatsApp, '_blank');
+}
+
+// Modificar la función procesarPagoMercadoPago
 async function procesarPagoMercadoPago() {
     if (cart.length === 0) {
         alert("El carrito está vacío.");
@@ -140,6 +175,8 @@ async function procesarPagoMercadoPago() {
 
         const data = await response.json();
         if (data.init_point) {
+            // Enviar mensaje de WhatsApp antes de redirigir a Mercado Pago
+            enviarMensajeWhatsApp();
             window.location.href = data.init_point;
         } else {
             alert("Error al generar el pago.");
@@ -156,8 +193,13 @@ function limpiarCarrito() {
     updateCartUI();
 }
 
+function toggleMenu() {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('active');
+}
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
+
