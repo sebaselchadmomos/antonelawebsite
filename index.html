@@ -14,27 +14,30 @@
         ¡Producto añadido al carrito!
     </div>
 
-    <header class="main-header">
-        <div id="cartCounter" class="cart-counter">0</div>
+    <div class="nav-container">
+        <!-- Menú hamburguesa para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Menú de navegación -->
         <nav>
-            <ul class="nav-list">
+            <ul class="nav-list main-header">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="index.html#cursos">Cursos</a></li>
                 <li><a href="mis-cursos.html">Mis Cursos</a></li>
-                <li><a href="about.html">Sobre Mí</a></li>
+                <li><a href="about.html" class="active">Sobre Mí</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="faq.html">Preguntas Frecuentes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                
-
             </ul>
         </nav>
 
+        <!-- Ícono del carrito -->
         <div class="cart-icon" onclick="toggleCart()">
             <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span> <!-- Asegúrate de que tenga la clase "cart-count" -->
+            <span id="cartCounter"class="cart-count">0</span>
         </div>
-    </header>
 
     <section class="hero" id="inicio">
         <div class="hero-content">
@@ -220,24 +223,26 @@
             <div class="cart-items" id="cartItems"></div>
             
             <form id="shippingForm" class="shipping-form">
-                <h4><i class="fas fa-truck"></i> Datos de Envío</h4>
+                <h4><i class="fas fa-truck"></i> Datos de Envío
+                </h4>
+                <h5>*RELLENAR SOLO SI SE COMPRA PRODUCTO FÍSICO</h5>
                 <div class="form-group">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" id="dni" name="dni" placeholder="DNI" required>
+                    <input type="number" id="dni" name="dni" placeholder="*DNI" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="direccion" name="direccion" placeholder="Dirección completa" required>
+                    <input type="text" id="direccion" name="direccion" placeholder="*Dirección completa" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+                    <input type="text" id="localidad" name="localidad" placeholder="*Localidad" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="provincia" name="provincia" placeholder="Provincia" required>
+                    <input type="text" id="provincia" name="provincia" placeholder="*Provincia" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" id="cp" name="cp" placeholder="Código Postal" required>
+                    <input type="number" id="cp" name="cp" placeholder="*Código Postal" required>
                 </div>
                 <div class="form-group">
                     <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
@@ -246,7 +251,7 @@
                     <textarea 
                         id="observaciones" 
                         name="observaciones" 
-                        placeholder="Observaciones adicionales"
+                        placeholder="*Observaciones adicionales"
                         rows="2"
                     ></textarea>
                 </div>
