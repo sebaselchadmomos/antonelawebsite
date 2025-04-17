@@ -3,16 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tarot Místico - Antonela</title>
+        <title>Antonela Website</title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="https://sdk.mercadopago.com/js/v2"></script>
     </head>
 <body>
+
     <div id="notification" class="notification">
         ¡Producto añadido al carrito!
     </div>
+    
+<header class="main-header">
+    
 
     <div class="nav-container">
         <!-- Menú hamburguesa para móviles -->
@@ -25,9 +29,9 @@
             <ul class="nav-list main-header">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="index.html#cursos">Cursos</a></li>
-                <li><a href="mis-cursos.html">Mis Cursos</a></li>
+                <li><a href="mis-cursos.html">Cursos Comprados</a></li>
                 <li><a href="about.html" class="active">Sobre Mí</a></li>
-                <li><a href="productos.html">Productos</a></li>
+                <!-- <li><a href="productos.html">Productos</a></li> -->
                 <li><a href="faq.html">Preguntas Frecuentes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -38,147 +42,218 @@
             <i class="fas fa-shopping-cart"></i>
             <span id="cartCounter"class="cart-count">0</span>
         </div>
+    </header>
+
 
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1 class="hero-title">Antonela</h1>
-            <p class="hero-subtitle">Maestra de Tarot</p>
+            <h1 class="hero-title">Soy Antonelaa</h1>
+            <p class="hero-subtitle">Técnicas terapéuticas y Tarot</p>
+        </div>
+    </section>
+    </div>
+
+    <section class="sobre-mi">
+        <div class="sobre-mi-contenido">
+            <h2>¡Bienvenidos!</h2>
+            <p>Soy Antonela, profesional con años de experiencia en tarot evolutivo y terapias alternativas. Mi enfoque combina el conocimiento ancestral del tarot con técnicas modernas de crecimiento personal, ayudando a mis alumnos y clientes a encontrar claridad y transformación en sus vidas.</p>
+            
+            <a href="#contacto" class="boton-contacto">Contactar</a>
         </div>
     </section>
 
+    <section class="burbujas">
+        <a href="#cursos" class="burbuja" data-section="cursos">
+            <img src="aprendeaLeerTarot.jpg" class="burbuja-icono" alt="Cursos">
+            <span class="burbuja-texto">Cursos</span>
+        </a>
+        
+        <a href="#tiradas" class="burbuja" data-section="tiradas">
+            <img src="tarotantonela.jpg" class="burbuja-icono" alt="Tiradas">
+            <span class="burbuja-texto">Tiradas</span>
+        </a>
+        
+        <a href="#constelaciones" class="burbuja" data-section="constelaciones">
+            <img src="constFamiliares.jpg" class="burbuja-icono" alt="Constelaciones">
+            <span class="burbuja-texto">Constelaciones Familiares</span>
+        </a>
+        
+        <a href="#biodescodificacion" class="burbuja" data-section="biodescodificacion">
+            <img src="biodecodificacion.jpg" class="burbuja-icono" alt="Biodescodificación">
+            <span class="burbuja-texto">Biodescodificación</span>
+        </a>
+    </section>
     
+    <div id="cursos">
+        <h1 class="title">Cursos de Tarot</h1>
+        <h2>Curso de Tarot Evolutivo – Arcanos Mayores (Clases Grabadas)</h2>
 
-    <h1>Cursos de Tarot</h1>
+            <h2>Este curso grabado está pensado para que aprendas a leer los Arcanos Mayores desde un enfoque evolutivo, profundo y transformador, utilizando la baraja Rider-Waite. No solo vas a conocer el significado de cada carta, sino también su simbología, postura, colores y energía, integrando su mensaje desde una mirada de crecimiento personal.
+            </h2>
+            <h1>¿Qué incluye el curso?</h1>
+            </h2>
+            <h2>
+            <ul class="list">
+                <li>Clases grabadas para que estudies a tu ritmo.</li>
+                <li>PDF teóricos y prácticos para acompañar tu estudio.</li>
+                <li>Un PDF exclusivo con interpretaciones y ejemplos de lecturas reales.</li>
+                <li>Limpieza, activación y conexión con tu mazo.</li>
+                <li>Lecturas de introspección para aplicar en vos y en otros.</li>
+                <li>Nociones de numerología vinculadas a los Arcanos.</li>
+                <li>Acompañamiento personalizado durante toda la cursada: vas a tener mi número para hacerme las consultas que necesites.</li>
+                <li>Certificación como tarotista profesional al finalizar el curso.
+            </ul>
+            </h2>
 
-    <div class="test-section">
-        <h3 class="">TODAS las clases</h3>
-        <a href="curso1.html?testing=true" class="test-button">Comprar</a>
+
+        <!-- <div class="test-section">
+            <h3 class="">TODAS las clases</h3>
+            <a href="curso1.html?testing=true" class="test-button">Comprar</a>
+        </div> -->
+        
+        <div class="readings-container">
+            
+            <div class="reading-card">
+                <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
+                <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
+                <p class="reading-description">Este curso es ideal tanto si querés comenzar tu camino de autoconocimiento, como si buscás una salida laboral acompañando a otros a través del Tarot.Estás a un clic de comenzar un viaje transformador. ¿Te animás?
+                    <div class="reading-price">$59999</div>
+                <button class="buy-button" onclick="addToCart(3)">Agregar al carrito</button>
+            </div>
+
+        </div>
+        <!-- Botón de prueba
+        <div class="test-section">
+            <h3>Acceso de Prueba (Solo Testing)</h3>
+            <a href="curso1.html?testing=true" class="test-button">Acceder a Lectura de Amor GRATIS</a>
+            <p class="test-warning">Este botón es solo para propósitos de prueba - Eliminar en producción</p>
+        </div> -->
     </div>
-    
-    <div class="readings-container" id="cursos">
-        <!-- Lectura 1 -->
-        <div class="reading-card">
-            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
-            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
-            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
-            <div class="reading-price">$29.99</div>
-            <button class="buy-button" onclick="addToCart(3)">Agregar al carrito</button>
-        </div>
-
-        <!-- Lectura 2 -->
-        <div class="reading-card">
-            <img src="arcanos mayores.jpg" alt="Tarot Carrera" class="reading-image">
-            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
-            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
-            <div class="reading-price">$34.99</div>
-            <button class="buy-button" onclick="addToCart(4)">Agregar al carrito</button>
-        </div>
-
-        <!-- Lectura 3 -->
-        <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
-            <h2 class="reading-title">Clase 3: Tiradas</h2>
-            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
-            <div class="reading-price">$39.99</div>
-            <button class="buy-button" onclick="addToCart(5)">Agregar al carrito</button>
-        </div>
-    </div>
-
+    <h1 id="tiradas" class="title">Tiradas</h1>
     <div class="readings-container">
         <!-- Lectura 1 -->
         <div class="reading-card">
-            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
-            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
-            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
-            <div class="reading-price">$29.99</div>
-            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar clase</a>
+            <img src="tarotAmor.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Evolucionar en el amor con el Tarot</h2>
+            <p class="reading-description">¿Dónde está tu energía hoy en el amor? ¿Qué está disponible para vos, ya sea que estés en pareja o transitando un camino en soledad? Esta lectura te ayuda a mirar hacia adentro y comprender qué te está mostrando el presente, qué bloqueos pueden estar afectando tu vínculo o tu capacidad de abrirte a una nueva relación, y cuál es el camino evolutivo que tu alma necesita recorrer.
+                <div class="reading-price">$25999</div>
+            <button class="buy-button" onclick="addToCart(6)">Agregar al carrito</button>
         </div>
-
-        <!-- Lectura 2 -->
         <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
-            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
-            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
-            <div class="reading-price">$34.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
+            <img src="tarotantonela.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Lectura general evolutiva</h2>
+            <p class="reading-description">En esta lectura general evolutiva trabajamos con el Tarot como herramienta de guía, claridad y transformación. Podés traer tus preguntas o simplemente dejar que las cartas revelen lo que hoy tu energía necesita ver.
+
+                Podemos abordar temas como:
+                
+                Amor y vínculos
+                
+                Trabajo, propósito y decisiones laborales
+                
+                Autoconocimiento y evolución personal
+                
+                Conflictos emocionales, bloqueos o dudas internas
+                
+                
+                Cada lectura está pensada desde un enfoque terapéutico y amoroso, para ayudarte a ver con más claridad tu presente y conectar con tu poder interior.
+                <div class="reading-price">$30000</div>
+            <button class="buy-button" onclick="addToCart(7)">Agregar al carrito</button>
         </div>
-
-        <!-- Lectura 3 -->
         <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
-            <h2 class="reading-title">Clase 3: Tiradas</h2>
-            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
-            <div class="reading-price">$39.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
+            <img src="vidasPasadasAntonela.jpg" alt="Tarot Amor" class="reading-image">
+            <h2 class="reading-title">Tarot de Vidas Pasadas</h2>
+            <p class="reading-description">¿Sentís que ciertos bloqueos se repiten una y otra vez? ¿Te cuesta entender el origen de lo que hoy te duele o limita? A través del Tarot de Vidas Pasadas podés descubrir cómo experiencias de otras encarnaciones están influyendo en tu presente.
+
+                En esta lectura vas a encontrar:
+                
+                El problema no resuelto de una vida pasada que se refleja hoy.
+                
+                Los patrones que conectan ambas vidas.
+                
+                Tus recursos actuales para sanar.
+                
+                Lo que tu alma necesita aprender.
+                
+                Cómo se proyecta tu vida futura si seguís el consejo del Tarot.
+                <div class="reading-price">$25999</div>
+            <button class="buy-button" onclick="addToCart(8)">Agregar al carrito</button>
         </div>
     </div>
 
-    <div class="readings-container">
-        <!-- Lectura 1 -->
-        <div class="reading-card">
-            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
-            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
-            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
-            <div class="reading-price">$29.99</div>
-            <a href="https://mpago.la/1AYp6yt" class="buy-button">Comprar clase</a>
-        </div>
+    <h1 id="constelaciones" class="title">Constelaciones Familiares</h1>
+    <h2>Sesión de Constelaciones Familiares – Online
+    </h2>
 
-        <!-- Lectura 2 -->
-        <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
-            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
-            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
-            <div class="reading-price">$34.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
-        </div>
+        <h2>Las constelaciones familiares son una herramienta terapéutica profunda que nos permiten abrir nuestro sistema familiar para mirar con amor lo que está oculto en nuestro inconsciente y ordenar lo que internamente nos está afectando.
 
-        <!-- Lectura 3 -->
-        <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
-            <h2 class="reading-title">Clase 3: Tiradas</h2>
-            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
-            <div class="reading-price">$39.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
-        </div>
-    </div>
+            La sesión es 100% online, a través de videollamada, y dura aproximadamente una hora. Trabajamos con Vincores o Plantillas, que permiten representar a distintas figuras del sistema. El consultante puede tomar el lugar de esas figuras y sentir desde cada uno de esos espacios, incluyendo su propia posición. El objetivo es posicionarte en tu lugar de mayor fuerza, con más conciencia y claridad.
+            </h2>
+        <h1>¿Qué puede revelarte una constelación?
+        </h1>
+        </h2>
+        <h2>
+            <ul class="list">
+                <li>Lealtades inconscientes con mamá o papá.
+                </li>
+                <li>Implicancias con miembros invisibles del sistema familiar.
+                </li>
+                <li>Anhelos no conscientes, patrones heredados, aspectos excluidos.
+                </li>
+                <li>Conflictos en vínculos, pareja, infidelidades, amantes.
+                </li>
+                <li>Bloqueos emocionales, frustraciones, síntomas físicos o emocionales.
+                </li>
+                <li>Temas económicos, laborales y de propósito.
+                </li>
+                <li>Potencial del consultante aún no manifestado.
+                </li>
+            </ul>
+        </h2>
+        <h2>Valor de la sesión: $29.999.
+            El turno se confirma una vez realizada la transferencia.
+        </h2>
 
-    <div class="readings-container">
-        <!-- Lectura 1 -->
-        <div class="reading-card">
-            <img src="arcanos mayores.jpg" alt="Tarot Amor" class="reading-image">
-            <h2 class="reading-title">Clase 1: Arcanos Mayores</h2>
-            <p class="reading-description">Descubre lo que las cartas revelan sobre tu vida amorosa y relaciones.</p>
-            <div class="reading-price">$29.99</div>
-            <button class="buy-button" onclick="addToCart(3)">Agregar al carrito</button>
-        </div>
-
-        <!-- Lectura 2 -->
-        <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Carrera" alt="Tarot Carrera" class="reading-image">
-            <h2 class="reading-title">Clase 2: Arcanos Menores</h2>
-            <p class="reading-description">Guía profesional para tomar decisiones importantes en tu trabajo.</p>
-            <div class="reading-price">$34.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
-        </div>
-
-        <!-- Lectura 3 -->
-        <div class="reading-card">
-            <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=Tarot+Kármico" alt="Tarot Kármico" class="reading-image">
-            <h2 class="reading-title">Clase 3: Tiradas</h2>
-            <p class="reading-description">Revelación de lecciones de vidas pasadas y tu destino espiritual.</p>
-            <div class="reading-price">$39.99</div>
-            <a href="#" class="buy-button">Comprar clase</a>
-        </div>
-    </div>
-
-    <!-- Botón de prueba -->
-    <div class="test-section">
-        <h3>Acceso de Prueba (Solo Testing)</h3>
-        <a href="curso1.html?testing=true" class="test-button">Acceder a Lectura de Amor GRATIS</a>
-        <p class="test-warning">Este botón es solo para propósitos de prueba - Eliminar en producción</p>
-    </div>
-
+        <h1 id="biodescodificacion" class="title">Biodescodificación </h1>
+        <h2>Sesión de Biodescodificación – Online
+        </h2>
     
+            <h2>La sesión es 100% online, a través de videollamada, y tiene como objetivo acompañarte a comprender el mensaje profundo detrás de un síntoma o enfermedad.
+            </h2>
+            <h2>Muchos me escriben preguntando “¿Qué significa tener tal síntoma?” o “¿Qué emoción lo genera?”. Pero cada persona es única: su historia, su biología y su contexto son irrepetibles. Por eso es fundamental tener una primera sesión personalizada, donde podamos observar tu caso en profundidad.
+            </h2>
+            <h2>Como biodescodificadora, trabajo con las bases de la Nueva Medicina Germánica, aplicando las 5 Leyes Biológicas</h2>
+            <h1> A partir del síntoma que traés, indagamos:
+            </h1>
+            </h2>
+            <h2>
+                <ul class="list">
+                    <li>En qué capa embrionaria se originó.
+                    </li>
+                    <li>Cuál es la capa germinal involucrada.
+                    </li>
+                    <li>Cuál es el conflicto emocional que está sosteniendo ese programa biológico que la medicina tradicional llama “enfermedad”.
+                    </li>
+                </ul>
+            </h2>
+            <h2>Durante la sesión realizo preguntas específicas, guiadas por este enfoque, para acceder a tu inconsciente. A través de distintas técnicas, buscamos el momento exacto en que se programó el BioShock (evento que cumple con cuatro características esenciales) y que, al activarse, da lugar al síntoma.
+            </h2>
+            <h2>Este encuentro es el primer paso hacia una comprensión más profunda de tu cuerpo, tus emociones y tu historia.
+            </h2>
+            <h2>
+            <ul class="list">
+                <li>Cuando indagamos en el inconsciente le preguntamos al que más sabe, que es tu cuerpo, el tiene toda la información!
+                </li>
+                <li>Podemos tratar cualquier problema Físico como emocional.
+                </li>
+                <li>Se aplica nuevo protocolo DECODIN que sirve para la liberación de trámites también , al liberar la emoción.
+                </li>
+                <li>El valor de la sesión es $29.999
+                    ( Se brinda el turno una vez abonada la sesión )
+                </li>
+                <li>No Constituye a una Sesión de Terapia ya que carece de continuidad , pero si son complementarias.</li>
+            </ul>
+            </h2>
+
 
     <!-- Sección Contacto -->
 <section class="contact-section" id="contacto">
@@ -193,19 +268,19 @@
                 <div class="contact-card">
                     <i class="fas fa-envelope contact-icon"></i>
                     <h3>Email</h3>
-                    <p>consultas@antonelatarot.com</p>
+                    <p>venus.antonela@gmail.com</p>
                 </div>
                 
                 <div class="contact-card">
                     <i class="fas fa-phone contact-icon"></i>
                     <h3>Teléfono</h3>
-                    <p>+54 9 11 2345-6789</p>
+                    <p>+54 9 11 2455-8555</p>
                 </div>
                 
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/soyantonelaa/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/54" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    
                 </div>
             </div>
         </div>
@@ -226,6 +301,7 @@
                 <h4><i class="fas fa-truck"></i> Datos de Envío
                 </h4>
                 <h5>*RELLENAR SOLO SI SE COMPRA PRODUCTO FÍSICO</h5>
+                <h5>*El envío se realiza por Correo Argentino, el mismo se despacha 24HS hábiles luego de realizada la compra y a partir de ese momento recibiras el número de orden de tu compra para su seguimiento</h5>
                 <div class="form-group">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
                 </div>
