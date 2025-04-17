@@ -139,19 +139,6 @@ body {
     animation: float 4s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
-    .burbujas {
-        grid-template-columns: 1fr;
-        padding: 30px 10px;
-    }
-    
-    .burbuja {
-        width: 150px;
-        height: 150px;
-        font-size: 0.9em;
-    }
-}
-
 h1 {
     font-size: 2.5rem;
     text-align: center;
