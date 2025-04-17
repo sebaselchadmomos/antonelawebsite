@@ -1,13 +1,16 @@
 // Configuración inicial
 const CART_KEY = 'mystic_store_cart';
-const MERCADOPAGO_PUBLIC_KEY = "APP_USR-d77859d2-ff5b-4775-923a-ba65d299c0f2"; // Reemplazar con tu clave pública de Mercado Pago
+const MERCADOPAGO_PUBLIC_KEY = "APP_USR-e2b140c6-85a0-4172-ada8-c07156984e85"; // Reemplazar con tu clave pública de Mercado Pago
 
 const PRODUCTOS = {
     1: { name: 'Mazo Rider-Waite', price: 18999 },
     2: { name: 'Kit Velas Rituales', price: 9850 },
-    3: { name: 'Clase 1: Arcanos Mayores', price: 1 },
+    3: { name: 'Clase 1: Arcanos Mayores', price: 59999 },
     4: { name: 'Clase 2: Arcanos Menores', price: 1 },
-    5: { name: 'Clase 3: Tiradas', price: 1 }
+    5: { name: 'Clase 3: Tiradas', price: 1 },
+    6: { name: 'Evolucionar en el amor con el Tarot', price: 25999},
+    7: { name: 'Lectura general evolutiva', price: 30000 },
+    8: { name: 'Tarot de Vidas Pasadas', price: 25999 }
 };
 
 
@@ -104,7 +107,7 @@ function enviarMensajeWhatsApp() {
                     cart.map(item => `- ${item.name} (Cantidad: ${item.quantity})`).join('%0A');
 
     // Número de WhatsApp (reemplaza con el número deseado)
-    const numeroWhatsApp = "+5491121909856"; // Ejemplo: +5491123456789
+    const numeroWhatsApp = "+5491124558555"; // Ejemplo: +5491123456789
 
     // Crear el enlace de WhatsApp
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
@@ -155,7 +158,7 @@ async function procesarPagoMercadoPago() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer APP_USR-1626069606855448-012723-d5d2547e9da034a6de3f95f99bdf67c5-1347089752`
+                "Authorization": `Bearer APP_USR-8109066221834761-040822-c61e5c9cc0dbc08841e4a0a3a2dcf733-1166074498`
             },
             body: JSON.stringify({
                 items: cart.map(item => ({
@@ -196,10 +199,25 @@ function limpiarCarrito() {
 function toggleMenu() {
     const navList = document.querySelector('.nav-list');
     navList.classList.toggle('active');
+
+    // Alternar el icono de menú hamburguesa
+    const menuIcon = document.querySelector('.menu-toggle i');
+    menuIcon.classList.toggle('fa-bars');
+    menuIcon.classList.toggle('fa-times');
 }
+
+// Cerrar el menú si se hace clic en un enlace
+document.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-list').classList.remove('active');
+        document.querySelector('.menu-toggle i').classList.add('fa-bars');
+        document.querySelector('.menu-toggle i').classList.remove('fa-times');
+    });
+});
+
+
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
-
