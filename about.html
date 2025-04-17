@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Antonela</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-container">
+            
+            <!-- Menú hamburguesa para móviles -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <!-- Menú de navegación -->
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#cursos">Cursos</a></li>
+                    <li><a href="mis-cursos.html">Cursos Comprados</a></li>
+                    <li><a href="about.html" class="active">Sobre Mí</a></li>
+                    <!-- <li><a href="productos.html">Productos</a></li> -->
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Ícono del carrito -->
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+    
+            
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Sobre mí</h1>
+            <p class="hero-subtitle">Conoce mi journey espiritual</p>
+        </div>
+    </section>
+
+    <section class="about-content" id="sobre-mi">
+        <div class="about-container">
+            <!-- Sección Sobre Mí -->
+            <article class="about-section">
+                <h2 class="section-title">Mi Historia</h2>
+                <div class="about-text">
+                    <p>¡Hola! Soy Antonela, tarotista y terapeuta holística. Desde los 18 años acompaño a las personas a conectarse consigo mismas a través de herramientas como el Tarot Evolutivo, las Constelaciones Familiares y la Biodescodificación y Terapeuta Transgeneracional (certificada en cada una de las  áreas mencionadas)
+                    </p>
+                    
+                    <p>Soy de Virgo, amante de lo holístico, las energías y la conexión que nos ofrece el universo. Mi misión es acompañarte con amor y respeto en tu proceso de evolución.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Sección Enfoque -->
+            <article class="about-section approach-section">
+                
+                <div class="about-text">
+                    <h2 class="section-title">Mi Enfoque</h2>
+                    <p>Mi enfoque está dirigido a quienes buscan sanar desde el alma, entendiendo que detrás de cada bloqueo siempre hay una emoción que necesita ser escuchada. Creo profundamente que el Tarot es una guía poderosa, más allá de lo adivinatorio: permite hacer introspección, tomar decisiones con claridad y navegar los momentos más complejos con mayor conciencia.
+                    "Es nuestra historia proyectada en cartas"</p>
+                    
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+<section class="contact-section" id="contacto">
+    <div class="contact-container">
+        <h2 class="section-title">Contacto</h2>
+        
+        <div class="contact-grid">
+            
+            <!-- Info de Contacto -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email</h3>
+                    <p>venus.antonela@gmail.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Teléfono</h3>
+                    <p>+54 9 11 2455-8555</p>
+                </div>
+                
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carrito Lateral -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-bag"></i> Mi Pedido</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    
+    <div class="cart-content">
+        <div class="cart-items" id="cartItems"></div>
+        
+        <form id="shippingForm" class="shipping-form">
+            <h4><i class="fas fa-truck"></i> Datos de Envío</h4>
+            <div class="form-group">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="dni" name="dni" placeholder="DNI" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección completa" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="provincia" name="provincia" placeholder="Provincia" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="cp" name="cp" placeholder="Código Postal" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+                <textarea 
+                    id="observaciones" 
+                    name="observaciones" 
+                    placeholder="Observaciones adicionales"
+                    rows="2"
+                ></textarea>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            
+            <button type="button" onclick="enviarPedidoWhatsApp()" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Finalizar Compra
+            </button>
+        </form>
+    </div>
+</div>
+
+    <script>
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
