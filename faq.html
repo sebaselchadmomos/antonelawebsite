@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santuario Espiritual - FAQ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Preguntas Frecuentes 🌙</h1>
+        
+        <div class="faq-item">
+            <h3>¿Cómo reservo una tirada de Tarot?</h3>
+            <p>Podés hacerlo por WhatsApp o desde la sección de reservas de la web.</div>
+
+        <div class="faq-item">
+            <h3>¿Hay requisitos para hacer los cursos de Tarot?
+            </h3>
+            <p>No, podés comenzar desde cero. Los cursos están pensados para acompañarte paso a paso.</div>
+
+        <div class="faq-item">
+            <h3>¿Las sesiones son presenciales o virtuales?
+            </h3>
+            <p>Todas las sesiones son online, para que puedas hacerlas desde cualquier lugar.</div>
+
+        <div class="faq-item">
+            <h3>¿Cuánto tardo en recibir la devolución de mi tirada de Tarot?</h3>
+            <p>La devolución es a las 48hs de la reserva</div>
+
+        <a href="index.html" class="back-to-store">← Volver al Santuario</a>
+    </div>
+
+    <!-- Sección Contacto -->
+<section class="contact-section" id="contacto">
+    <div class="contact-container">
+        <h2 class="section-title">Contacto</h2>
+        
+        <div class="contact-grid">
+            
+            <!-- Info de Contacto -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email</h3>
+                    <p>venus.antonela@gmail.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Teléfono</h3>
+                    <p>+54 9 11 2455-8555</p>
+                </div>
+                
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/soyantonelaa/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5491124558555" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carrito Lateral -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h3><i class="fas fa-shopping-bag"></i> Mi Pedido</h3>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    
+    <div class="cart-content">
+        <div class="cart-items" id="cartItems"></div>
+        
+        <form id="shippingForm" class="shipping-form">
+            <h4><i class="fas fa-truck"></i> Datos de Envío</h4>
+            <div class="form-group">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="dni" name="dni" placeholder="DNI" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección completa" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="localidad" name="localidad" placeholder="Localidad" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="provincia" name="provincia" placeholder="Provincia" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="cp" name="cp" placeholder="Código Postal" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+                <textarea 
+                    id="observaciones" 
+                    name="observaciones" 
+                    placeholder="Observaciones adicionales"
+                    rows="2"
+                ></textarea>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            
+            <button type="button" onclick="enviarPedidoWhatsApp()" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Finalizar Compra
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>
