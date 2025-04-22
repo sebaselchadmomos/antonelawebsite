@@ -139,6 +139,7 @@ body {
     animation: float 4s ease-in-out infinite;
 }
 
+
 h1 {
     font-size: 2.5rem;
     text-align: center;
@@ -173,7 +174,7 @@ h1 {
 h2 {
     color: #cf2a8b; /* Rosa oscuro/magenta */
     font-family: 'Georgia', serif;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     text-align: center;
     margin: 2rem auto;
