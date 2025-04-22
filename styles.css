@@ -397,6 +397,7 @@ h2::after {
 
     .hero{
         margin-top: 0;
+        background-size: 150%;
     }
 }
 
