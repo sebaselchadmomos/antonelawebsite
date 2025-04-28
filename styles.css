@@ -5,6 +5,10 @@
     font-family: 'Arial', sans-serif;
 }
 
+:root {
+  color-scheme: light;
+}
+
 body {
     background-color: #FFF0F5;
     padding: 20px;
